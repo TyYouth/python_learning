@@ -14,6 +14,7 @@ class person(object):
 
     # __init__:用于创建对象时进行初始化操作的特殊方法
     # 属性前缀 _ 来声明属性受保护, 不建议直接访问
+    # 类的方法第一个参数为 self, 表示当前对象实例(地址)
     def __init__(self, name, age):
         self.name = name
         self._age = age
@@ -28,6 +29,7 @@ class person(object):
 
     # # 动态类方法
     # @classmethod
+    # 类方法的第一个参数 cls 表示该类自身
     # def person_info(cls):
     #     student = person('xiaoming', age)
     #     return cls(student)
