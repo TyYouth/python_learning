@@ -27,12 +27,11 @@ class person(object):
             is_person = False
         return is_person
 
-    # # 动态类方法
+    # 动态类方法
     # @classmethod
-    # 类方法的第一个参数 cls 表示该类自身
-    # def person_info(cls):
-    #     student = person('xiaoming', age)
-    #     return cls(student)
+    # 类方法的第一个参数 cls 表示该类自身, 可通过该参数获取类信息和创建类的对象
+    def person_info(cls):
+        return cls.age_get
 
     # 访问器 - getttr方法
     @property
@@ -59,7 +58,7 @@ class person(object):
             print("%s is %d years old and is watching adult video" %
                   (self.name, self._age))
 
-    # __ 前缀表示私有化方法
+    # __ 前缀表示私有化方法或属性,不能在外部被调用
     def __fighting(self):
         print("%s is fighting with other" % (self.name))
 
@@ -104,7 +103,7 @@ def main():
         # __slots__ 绑定的属性
         student1._gender = 'man'
         print(student1._gender)
-        # student1.person_info()
+        print(student1.person_info())
     else:
         print("are you sure???")
 
@@ -112,6 +111,7 @@ def main():
     if person.is_person(age2):
         teacher1 = teacher('laowang', age2, 'professor')
         teacher1.teach('Chinese')
+        print(teacher1.person_info())
         teacher1.watch_movie()
         teacher1.fighting()
     else:
@@ -120,4 +120,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
