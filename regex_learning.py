@@ -42,7 +42,7 @@ purge(): 清除隐性编译的正则表达式的缓存
 # python3 正则表达式修饰符
 """
 re.l 对大小写不敏感, L 做本地识别匹配
-M 多行匹配, 影响^ 和 $, 
+M 多行匹配, 影响^ 和 $ 
 S 使.匹配包括换行在内的所有字符
 """
 
@@ -111,6 +111,8 @@ def compile_function():
     print('s.start():', s.start())
     print("s.end():", s.end())
     print('s.span():', s.span())
+
+
 # 复杂的正则表达式练习
 
 
